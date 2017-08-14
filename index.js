@@ -43,6 +43,11 @@ const ReadingDataJSONLoader = (function () {
     })
   }
   return {
+    config: {
+      scope: 'json-loader',
+      validateContentType: false
+    },
+
     fetch: async function ({config, scope}) {
       if (!config.hasOwnProperty('path')) {
         throw new Error('ReadingDataJSONLoader#fetch(): expected config to have property path.')
