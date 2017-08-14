@@ -13,8 +13,7 @@ const ReadingDataJSONLoader = (function () {
 
   return {
     config: {
-      scope: 'json-loader',
-      validateContentType: false
+      scope: 'json-loader'
     },
 
     fetch: async function ({config, scope}) {
