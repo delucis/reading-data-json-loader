@@ -5,6 +5,11 @@
 const GET = require('got')
 
 const ReadingDataJSONLoader = (function () {
+  const isHTTP = function (path) {
+    let httpRegEx = new RegExp(/^http(s)?:\/\/\S+/, 'i')
+    return httpRegEx.test(path)
+  }
+
   return {
     config: {
       scope: 'json-loader',
