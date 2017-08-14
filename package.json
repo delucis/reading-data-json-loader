@@ -1,0 +1,29 @@
+{
+  "name": "@delucis/reading-data-json-loader",
+  "version": "0.0.1",
+  "description": "JSON file loader plugin for @delucis/reading-data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delucis/reading-data-json-loader.git"
+  },
+  "author": "Chris Swithinbank <swithinbank@gmail.com> (http://chrisswithinbank.net/)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/delucis/reading-data-json-loader/issues"
+  },
+  "homepage": "https://github.com/delucis/reading-data-json-loader#readme",
+  "devDependencies": {
+    "@delucis/reading-data": "latest",
+    "chai": "^4.1.1",
+    "coveralls": "^2.13.1",
+    "jsdoc": "^3.5.4",
+    "minami": "^1.2.3",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "rimraf": "^2.6.1"
+  }
+}
