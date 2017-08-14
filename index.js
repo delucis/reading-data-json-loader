@@ -3,6 +3,7 @@
  */
 
 const GET = require('got')
+const LOAD = require('load-json-file')
 
 const ReadingDataJSONLoader = (function () {
   const isHTTP = function (path) {
