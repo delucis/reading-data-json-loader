@@ -66,6 +66,17 @@ DESCRIBE('ReadingDataJSONLoader', function () {
     EXPECT(READING_DATA.data).to.have.property(testScope)
   })
 
+  IT('should follow a 301 redirect', async function () {
+    let path = 'http://raw.githubusercontent.com/delucis/reading-data/master/package.json'
+    let testScope = 'redirectToGithubPackageJSONTest'
+    READING_DATA.use(RD_JSON_LOADER, {
+      scope: testScope,
+      path
+    })
+    await READING_DATA.run()
+    EXPECT(READING_DATA.data).to.have.property(testScope)
+  })
+
   IT('should load multiple paths to multiple scopes', async function () {
     let testScope1 = 'multiScopeSecureGithubPackageJSONTest'
     let testScope2 = 'multiScopeCsnetJSONTest'
