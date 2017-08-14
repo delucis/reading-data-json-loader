@@ -2,7 +2,7 @@
  * @module reading-data-json-loader
  */
 
-const GOT = require('got')
+const GET = require('got')
 
 const ReadingDataJSONLoader = (function () {
   return {
@@ -24,7 +24,7 @@ const ReadingDataJSONLoader = (function () {
         throw new Error('ReadingDataJSONLoader#fetch(): expected config.path to be a string or an object with scope "' + scope + '".')
       }
       try {
-        let res = await GOT(path, { json: true })
+        let res = await GET(path, { json: true })
         let json = res.body
         return json
       } catch (e) {
