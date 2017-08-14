@@ -43,6 +43,25 @@ const ReadingDataJSONLoader = (function () {
     })
   }
   return {
+    fetch: async function ({config, scope}) {
+      if (!config.hasOwnProperty('path')) {
+        throw new Error('ReadingDataJSONLoader#fetch(): expected config to have property path.')
+      }
+      let path
+      if (typeof config.path === 'string') {
+        path = config.path
+      } else if (typeof config.path === 'object' && config.path.hasOwnProperty(scope)) {
+        path = config.path[scope]
+      } else {
+        throw new Error('ReadingDataJSONLoader#fetch(): expected config.path to be a string or an object with scope "' + scope + '".')
+      }
+      try {
+        let json = await get(path, config)
+        return json
+      } catch (e) {
+        throw new Error('ReadingDataJSONLoader#fetch(): ' + e)
+      }
+    }
   }
 }())
 
