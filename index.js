@@ -29,12 +29,17 @@ const ReadingDataJSONLoader = (function () {
       } else {
         throw new Error('ReadingDataJSONLoader#fetch(): expected config.path to be a string or an object with scope "' + scope + '".')
       }
-      try {
-        let res = await GET(path, { json: true })
-        let json = res.body
+      if (isHTTP(path)) {
+        try {
+          let res = await GET(path, { json: true })
+          let json = res.body
+          return json
+        } catch (e) {
+          throw new Error('ReadingDataJSONLoader#fetch(): ' + e)
+        }
+      } else {
+        let json = await LOAD(path)
         return json
-      } catch (e) {
-        throw new Error('ReadingDataJSONLoader#fetch(): ' + e)
       }
     }
   }
