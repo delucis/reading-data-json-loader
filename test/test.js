@@ -45,6 +45,17 @@ DESCRIBE('ReadingDataJSONLoader', function () {
     }
   })
 
+  IT('should load a local JSON file if path is not HTTP(S)', async function () {
+    let path = 'package.json'
+    let testScope = 'localPackageJSON'
+    READING_DATA.use(RD_JSON_LOADER, {
+      scope: testScope,
+      path
+    })
+    await READING_DATA.run()
+    EXPECT(READING_DATA.data).to.have.property(testScope)
+  })
+
   IT('should load a remote JSON file over HTTPS', async function () {
     let path = 'https://raw.githubusercontent.com/delucis/reading-data/master/package.json'
     let testScope = 'secureGithubPackageJSONTest'
@@ -99,6 +110,20 @@ DESCRIBE('ReadingDataJSONLoader', function () {
   IT('should throw an error if loading a non-JSON resource', async function () {
     let testScope = 'nonJsonURITest'
     let path = 'https://github.com'
+    READING_DATA.use(RD_JSON_LOADER, {
+      scope: testScope,
+      path
+    })
+    try {
+      await READING_DATA.run()
+    } catch (e) {
+      EXPECT(e).to.be.an('error')
+    }
+  })
+
+  IT('should throw an error if loading a local file that doesn’t exist', async function () {
+    let path = 'this-file-probably-doesn’t-exist.json'
+    let testScope = 'nonexistentLocalJSONFile'
     READING_DATA.use(RD_JSON_LOADER, {
       scope: testScope,
       path
