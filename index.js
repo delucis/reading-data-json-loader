@@ -35,4 +35,3 @@ const ReadingDataJSONLoader = (function () {
 }())
 
 module.exports = ReadingDataJSONLoader
-
