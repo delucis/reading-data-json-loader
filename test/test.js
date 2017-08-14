@@ -9,6 +9,7 @@ const RD_JSON_LOADER = require('../index')
 
 BEFORE_EACH(function () {
   READING_DATA.uninstall()
+  READING_DATA.clean()
 })
 
 DESCRIBE('ReadingDataJSONLoader', function () {
