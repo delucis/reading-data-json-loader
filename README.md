@@ -54,5 +54,6 @@ RD.run().then((res) => {
 
 name    | type                 | default       | required? | description
 --------|----------------------|---------------|:---------:|-------------------------------------------------------------------------------------------------------------------------------------------
+`hooks` | `String`, `Object` |               |           | The `reading-data` hook that should load the JSON file. Can be scoped by passing a object with scopes as keys, hooks as values.
 `path`  | `String`, `Object` |               |     ✔︎     | The path or URL of the JSON file to load. Can be an object, where the keys match the scope(s) set in the `scope` option.
 `scope` | `String`, `Array`  | 'json-loader' |     ✔︎     | The scope under which `reading-data` will store this plugin’s data. Can be an array to return multiple filepaths/URLs, to multiple scopes.
