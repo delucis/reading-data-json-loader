@@ -30,6 +30,25 @@ RD.run().then((res) => {
 })
 ```
 
+Using `reading-data-json-loader` to load multiple files
+
+```js
+RD.use(JSON_LOADER, {
+  scope: [local, github, unpkg]
+  path: {
+    local: 'package.json',
+    github: 'https://raw.githubusercontent.com/delucis/reading-data/master/package.json',
+    unpkg: 'https://unpkg.com/@delucis/reading-data/package.json'
+  }
+})
+
+RD.run().then((res) => {
+  for (var key in res.data) {
+    console.log(key) // 'local', 'github', 'unpkg'
+  }
+})
+```
+
 
 ## Options
 
