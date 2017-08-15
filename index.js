@@ -46,7 +46,7 @@ const ReadingDataJSONLoader = (function () {
      *
      * @since 0.0.1
      */
-    fetch: async function ({config, scope}) {
+    data: async function ({config, scope}) {
       if (!config.hasOwnProperty('path')) {
         throw new Error('ReadingDataJSONLoader#fetch(): expected config to have property path.')
       }
