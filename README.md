@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/delucis/reading-data-json-loader.svg?branch=master)](https://travis-ci.org/delucis/reading-data-json-loader)
 [![Coverage Status](https://coveralls.io/repos/github/delucis/reading-data-json-loader/badge.svg?branch=master)](https://coveralls.io/github/delucis/reading-data-json-loader?branch=master)
+[![npm (scoped)](https://img.shields.io/npm/v/@delucis/reading-data-json-loader.svg)](https://www.npmjs.com/package/@delucis/reading-data-json-loader)
 
 A plugin for [`@delucis/reading-data`](https://github.com/delucis/reading-data)
 that loads JSON files over the network or from the local file system.
