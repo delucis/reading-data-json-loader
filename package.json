@@ -1,6 +1,6 @@
 {
   "name": "@delucis/reading-data-json-loader",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "JSON file loader plugin for @delucis/reading-data.",
   "main": "index.js",
   "scripts": {
